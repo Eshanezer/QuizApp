@@ -5,8 +5,9 @@ import {ref,watch} from "vue";
 const quizes =ref(q);
 const search = ref("");
 
+// working as listner
 watch(search,()=>{
-  
+  quizes.value = q.filter(quiz=>quiz.name.toLowerCase().includes(search.value.toLowerCase()))
 });
 
 </script>
